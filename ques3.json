@@ -1,0 +1,30 @@
+
+{
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::austin-pe-ques2/*"
+        },
+        {
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::austin-pe-ques2/Secret-Folder/*"
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::488599217855:root"
+            },
+            "Action": [
+                "s3:DeleteObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::austin-pe-ques2/*"
+        }
+    ]
+}
+
+
